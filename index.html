@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labic Function Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Labic Function Solver</h1>
+            <p>Sua calculadora de funções afins e quadráticas</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="calculator-box">
+                <h2>Insira sua função</h2>
+                <form action="/" method="post">
+                    <div class="input-group">
+                        <span>f(x) =</span>
+                        <input type="text" name="expression" id="expression" placeholder="Ex: 2*x^2 - 3*x + 1" required>
+                    </div>
+                    <button type="submit">Calcular</button>
+                </form>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <div class="instructions">
+                    <h3>Como usar:</h3>
+                    <ul>
+                        <li>Para multiplicação, use o asterisco (*). Ex: <strong>3*x</strong></li>
+                        <li>Para potência (ao quadrado), use dois asteriscos (**) ou acento circunflexo (^). Ex: <strong>x**2 ou x^2</strong></li>
+                        <li>Função Afim: <strong>-5*x + 10</strong></li>
+                        <li>Função Quadrática: <strong>x^2 - 5*x + 6</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Labic Function Solver. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
